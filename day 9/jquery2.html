@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Demo2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function() 
+        {
+			$("#BtnShow").attr("disabled", true);
+			$("#BtnHide").click(function() 
+            {
+                if (confirm("Are You Sure?"))
+                {
+                    $("#MyDiv").hide(3000);
+                    $(this).attr("disabled", true);
+                    $("#BtnShow").attr("disabled", false);
+                	$("#BtnToggle").text("Show");
+				}
+            });
+            $("#BtnShow").click(function() 
+            {
+            	if (confirm("Are You sure?")) 
+            	{
+            		$("#MyDiv").show(3000);
+            		$(this).attr("disabled", true);
+            		$("#BtnHide").attr("disabled", false);
+            		$("#BtnToggle").text("Hide");
+            	}
+            });
+            $("#BtnToggle").click(function() 
+            {
+                if (confirm("Are You sure?")) 
+                {
+                	$("#MyDiv").toggle(3000);
+                	if ($("#BtnToggle").text() == "Hide")
+           			{
+                		$("#BtnToggle".text("Show"));
+                		$("#BtnHide").attr("disabled", true);
+                		$("#BtnShow".attr("disabled", false));
+                	} 
+                	else if($("#BtnToggle").text() == "Show")
+                	{
+                	
+                		$("#BtnToggle".text("Hide"));
+                		$("#BtnHide".attr("disabled", false));
+                		$("#BtnShow".attr("disabled", true));
+                	}
+                }
+            }); 
+			$("#Btnplus").click(function()
+			{
+				
+			}); 
+			$("#BtnMinus").click(function(){});
+        });
+    </script>
+</head>
+<body>
+	<div id="MyDiv" style="height: 250px; width: 250px; background-color: darkred;"></div><hr/>
+    &nbsp;&nbsp;<button id="BtnHide">Hide</button>
+    &nbsp;&nbsp;<button id="BtnShow">Show</button><hr/>
+    &nbsp;&nbsp;<button id="BtnToggle">Toggle</button><hr/>
+    &nbsp;&nbsp;<button id="Btnplus" style="font-size: xx-large;"><b>+</b></button>
+    &nbsp;&nbsp;<button id="BtnMinus" style="font-size: xx-large;"><b>-</b></button><hr/>
+</body>
+</html>

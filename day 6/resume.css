@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+body{
+    border: 2px solid black;
+}
+img{
+    height: 150px;
+    width: 150px;
+    margin-left:20%;
+    margin-top: 12%;
+    border-radius: 50%;
+}
+#imgs{
+    width: 20%;
+}
+hr{
+    height: 2px;
+    background-color: black;
+    border: none;
+}
+#content{
+    width: 80%;
+}
+h2{
+    margin-top: 3%;
+    margin-left: 3%;
+    
+}
+h4{
+    font-weight: 500;
+    margin-left: 6%;
+}
+.f1{
+    margin-top: 1%;
+}
+
+li{
+    margin-left: 6%;
+    font-weight: 500;
+}
+
+.onehalf,.secondhalf{
+    margin-top: 2%;
+    font-size: 18px;
+    font-weight: 550;
+}
+.onehalf p,.secondhalf p{
+    margin-left: 6%;
+}
+
+#upper{
+    background-image: url("https://images.pexels.com/photos/4194850/pexels-photo-4194850.jpeg?auto=compress&cs=tinysrgb&w=400");
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border:1px solid black;
+}
+#head{
+    display: flex;
+    justify-content: left;
+    font-size: 400%;
+    font-stretch: ultra-expanded;
+    margin-left: 2%;
+    margin-top: 6%;
+}
+#upper p{
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: ultra-expanded;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+#lower{
+    display: flex;
+}
+#left{
+    width: 60vw;
+    background-color: rgb(145, 143, 143);
+    border:1px solid black;
+}   
+#right{
+    width: 40vw;
+    background-color: rgb(88, 87, 87);
+    border:1px solid black;
+}
+#righteq1,#righteq2{
+    margin-top: 3%;
+}
+#righteq1 h2,p{
+    margin-left: 6%;
+    margin-top: 2%;
+    font-size: 20px;
+}
+#right h2{
+    color: rgb(226, 221, 218);
+}

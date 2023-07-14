@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            background-image: url(C:\Users\Admin\Desktop\MH Architects Website\images\back4.jpg);
+        }
+        .emoji-rating span {
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .emoji-rating span:hover {
+            opacity: 50%;
+        }
+
+        .emoji-rating span.selected {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Feedback Form</h2>
+        <form action="feedback.php" method="GET">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name." required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-Mail here." required>
+            </div>
+            <div class="form-group">
+                <label for="rating">How happy are you with our service?</label>
+                <div class="emoji-rating">
+                    <span class="rating-emoji" data-value="1">&#x1F641;</span>
+                    <span class="rating-emoji" data-value="2">&#x1F610;</span>
+                    <span class="rating-emoji" data-value="3">&#x1F642;</span>
+                    <span class="rating-emoji" data-value="4">&#x1F600;</span>
+                    <span class="rating-emoji" data-value="5">&#x1F60D;</span>
+                </div>
+                <input type="hidden" name="emojiRating" id="emojiRating" required>
+            </div>
+
+            <div class="form-group">
+                <label for="feedbackType">Type of Feedback:</label>
+                <select class="form-control" id="feedbackType" name="feedbackType" required>
+                    <option value="">Select a feedback type</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Suggestion">Suggestion</option>
+                    <option value="Appreciation">Appreciation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Feedback: </label>
+                <textarea class="form-control" id="feedback" name="feedback" rows="4" placeholder="Enter your feedback (Max 200 letters)." required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="" required> I agree to <a href="#">Terms and Conditions.</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".rating-emoji").click(function() {
+                $(".rating-emoji").removeClass("selected");
+                $(this).addClass("selected");
+                $("#emojiRating").val($(this).data("value"));
+            });
+        });
+    </script>
+</body>
+</html>
